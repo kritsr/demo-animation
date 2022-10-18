@@ -1,49 +1,35 @@
-let el = document.getElementById('img');
-let difTop = el.getBoundingClientRect().top;
-let stage = 1;
-let stage2ScrollY = 0;
-let nStage3 = 0;
-let lastScrollTop = 0;
-window.onscroll = e => {
-    var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
+let el = document.getElementById("img");
+let currentRight1 = 0;
+let currentRight2 = 0;
 
-    let cch = (window.scrollY*2)-10;
-    let inEl = document.getElementById('img');
-    let inDifTop = inEl.getBoundingClientRect().top;
-    let inDifLeft = inEl.getBoundingClientRect().left;
+window.onscroll = (e) => {
+  var st = window.pageYOffset || document.documentElement.scrollTop;
+  let difTop = el.getBoundingClientRect().top;
+  let difPerTop = (difTop / screen.height) * 100;
 
-    // stage 1
-    if(inDifTop > -120 && cch < window.innerHeight) {
-        stage = 1;
-        el.style.top = `calc(${difTop}px - ${window.scrollY}px)`;
-        el.style.left = '50%';
-    }
+  el.style.width = (50 + (st/2.85)) + "px";
+  el.style.height = (47 + (st/3)) + "px";
 
-    // stage 2
-    if(inDifTop < -50) {
-        stage = 2;
-        el.style.left = 0;
-    }
-    if(stage === 2) {
-        el.style.top = `${difTop}px`;
-        el.style.left = `${cch/5}px`;
-    }
+  if (difPerTop < 10) {
+    el.style.transform = "scaleX(-1)";
+    el.style.right = st * 4 + "px";
+    el.style.top = st + "px";
+  }
 
-    // stage 3
-    if(inDifLeft > window.innerWidth && stage === 2) {
-        stage = 3;
-        stage2ScrollY = window.scrollY;
-    } else if(inDifTop > window.innerHeight && stage === 3) {
-        stage = 2;
-    }
+  if (difPerTop >= 10 && difPerTop < 20) {
+    if (!currentRight1) currentRight1 = el.style.right.split("px")[0];
 
-    if(stage === 3){
-        el.style.left = '50%';
-        el.style.top = `calc(100% - ${nStage3}px)`;
+    el.style.transform = "scaleX(1)";
+    el.style.right = currentRight1 - st + "px";
+    el.style.top = st + "px";
+  }
 
-        nStage3 = st > lastScrollTop ? nStage3 += 20 : nStage3 -= 20;
-        lastScrollTop = st <= 0 ? 0 : st;
-    }
+  if (difPerTop >= 20) {
+    if(!currentRight2) currentRight2 = el.style.right.split("px")[0];
+    el.style.transform = "scaleX(-1)";
+    el.style.right = st * 2 + "px";
+    el.style.top = st + "px";
+  }
 
-    document.getElementsByClassName('container')[0].style.background = `rgba(255, 0, 0, ${window.scrollY / 3000})`;
-}
+  console.log(st);
+};

@@ -19,4 +19,141 @@
     right: 0;
     top: 0;
     transform: scaleX(-1);
+    display: none;
+}
+
+.section-moveup {
+    position: fixed;
+    width: 100%;
+    height: auto;
+    top: 50%;
+    transform: translate(0, -50%);
+
+    display: none;
+    /* align-items: center; */
+    /* animation: fadeup 5s forwards; */
+}
+
+#img2 {
+    width: 300px;
+    height: 300px;
+    background: url('./cartoon2.png');
+    background-size: cover;
+}
+
+.section-moveup .text-area {
+    padding-left: 100px;
+}
+
+.section-moveup .text-area .title {
+    font-size: 2rem;
+    color: rgb(71, 158, 230);
+}
+
+.section-moveup .text-area .label {
+    display: block;
+    font-size: 1.5rem;
+    margin-top: 20px;
+}
+
+@keyframes show-first {
+    0% {
+        transform: scaleX(-1);
+        width: 50px;
+        height: 47px;
+        right: 0;
+        top: 0;
+    }
+    33% {
+        transform: scaleX(-1);
+        width: 70px;
+        height: 65.5px;
+        right: 40%;
+        top: 10vh;
+    }
+    34% {
+        transform: scaleX(1);
+    }
+    66% {
+        transform: scaleX(1);
+
+        width: 100px;
+        height: 94px;
+        right: 20%;
+        top: 20vh;
+    }
+    67% {
+        transform: scaleX(-1);
+    }
+    100% {
+        transform: scaleX(-1);
+        width: 140px;
+        height: 131px;
+        right: 100%;
+        top: 80vh;
+    }
+}
+
+@keyframes hide-first {
+    100% {
+        transform: scaleX(-1);
+        width: 50px;
+        height: 47px;
+        right: 0;
+        top: 0;
+    }
+    67% {
+        transform: scaleX(-1);
+        width: 70px;
+        height: 65.5px;
+        right: 40%;
+        top: 10vh;
+    }
+    66% {
+        transform: scaleX(1);
+    }
+    34% {
+        transform: scaleX(1);
+
+        width: 100px;
+        height: 94px;
+        right: 20%;
+        top: 20vh;
+    }
+    33% {
+        transform: scaleX(-1);
+    }
+    0% {
+        transform: scaleX(-1);
+        width: 140px;
+        height: 131px;
+        right: 100%;
+        top: 80vh;
+    }
+}
+
+@keyframes fadeup {
+    0% {
+        top: 100%;
+        transform: translate(0, 0);
+        opacity: 0;
+    }
+    20% {
+        top: 50%;
+        transform: translate(0, -50%);
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadedown {
+    100% {
+        top: 100%;
+        transform: translate(0, 0);
+        opacity: 0;
+    }
+    0% {
+        opacity: 1;
+    }
 }

@@ -5,20 +5,44 @@
 
 .container {
     width: 100%;
-    height: 2000vh;
-    background: rgba(255, 0, 0, 0);
+}
+
+.bg-section-1 {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: rgb(37, 37, 37);
+}
+
+.bg-section-1 img {
+    width: 300px;
+    position: absolute;
+    right: 15%;
+}
+
+.bg-section-2 {
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    background: url('./assets/images/bg1.png');
+    background-size: cover;
+    overflow: hidden;
+}
+
+.bg-section-2 .circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: white;
+    position: absolute;
+    top: -100px;
+    right: 0px;
 }
 
 #img {
-    width: 50px;
-    height: 47px;
-    background: url('./cartoon.png');
-    background-size: cover;
-
     position: fixed;
-    right: 0;
-    top: 0;
-    transform: scaleX(-1);
     display: none;
 }
 
@@ -30,14 +54,12 @@
     transform: translate(0, -50%);
 
     display: none;
-    /* align-items: center; */
-    /* animation: fadeup 5s forwards; */
 }
 
 #img2 {
     width: 300px;
     height: 300px;
-    background: url('./cartoon2.png');
+    background: url('./assets/images/1.jpg');
     background-size: cover;
 }
 
@@ -47,49 +69,54 @@
 
 .section-moveup .text-area .title {
     font-size: 2rem;
-    color: rgb(71, 158, 230);
+    color: rgb(135, 183, 223);
 }
 
 .section-moveup .text-area .label {
     display: block;
     font-size: 1.5rem;
     margin-top: 20px;
+    color: rgb(196, 196, 196);
+}
+
+.bg-section-3 {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background: url('./assets/images/bg2.png');
+
+    display: none;
 }
 
 @keyframes show-first {
     0% {
-        transform: scaleX(-1);
-        width: 50px;
-        height: 47px;
-        right: 0;
-        top: 0;
+        transform: rotate(-90deg) scaleX(1);
+        width: 100px;
+        right: 100px;
+        top: 10px;
     }
-    33% {
-        transform: scaleX(-1);
-        width: 70px;
-        height: 65.5px;
+    20% {
+        transform: rotate(-90deg) scaleX(1);
+        width: 150px;
         right: 40%;
         top: 10vh;
     }
-    34% {
-        transform: scaleX(1);
+    21% {
+        transform: scaleX(-1) rotate(-90deg);
     }
-    66% {
-        transform: scaleX(1);
-
-        width: 100px;
-        height: 94px;
-        right: 20%;
+    50% {
+        transform: scaleX(-1) rotate(-90deg);
+        width: 200px;
+        right: -220px;
         top: 20vh;
     }
-    67% {
-        transform: scaleX(-1);
+    51% {
+        transform: rotate(-90deg) scaleX(1);
     }
     100% {
-        transform: scaleX(-1);
-        width: 140px;
-        height: 131px;
-        right: 100%;
+        transform: rotate(-90deg) scaleX(1);
+        width: 250px;
+        right: 110%;
         top: 80vh;
     }
 }

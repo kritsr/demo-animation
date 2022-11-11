@@ -19,11 +19,11 @@ window.onscroll = (e) => {
       el2.style.display = 'flex';
       el2.style.alignItems = 'center';
       el2.style.animation = 'fadeup 2s forwards';
-    }, 500)
+    }, 400)
 
     setTimeout(() => {
       elSection3.style.display = 'block';
-    }, 600)
+    }, 550)
     // if(!isFirst) {
     //   setTimeout(() => {
     //     el2.style.display = 'flex';

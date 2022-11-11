@@ -13,17 +13,17 @@ window.onscroll = (e) => {
   let st = window.pageYOffset || document.documentElement.scrollTop;
   if(st >= (section1Height - 20)) {
     el.style.display = 'block';
-    el.style.animation = 'show-first 2s forwards';
+    el.style.animation = 'show-first 400ms forwards';
 
     setTimeout(() => {
       el2.style.display = 'flex';
       el2.style.alignItems = 'center';
-      el2.style.animation = 'fadeup 5s forwards';
-    }, 2100)
+      el2.style.animation = 'fadeup 2s forwards';
+    }, 500)
 
     setTimeout(() => {
       elSection3.style.display = 'block';
-    }, 3100)
+    }, 600)
     // if(!isFirst) {
     //   setTimeout(() => {
     //     el2.style.display = 'flex';
@@ -50,13 +50,13 @@ window.onscroll = (e) => {
 
   if(st >= ((section1Height*2) - 20)) {
     el3.style.display = 'block';
-    el3.style.animation = 'show-second 3s forwards';
+    el3.style.animation = 'show-second 600ms forwards';
 
     setTimeout(() => {
       el4.style.display = 'flex';
       el4.style.alignItems = 'center';
-      el4.style.animation = 'fadeup-2 2s forwards';
-    }, 3100)
+      el4.style.animation = 'fadeup-2 1s forwards';
+    }, 600)
 
     // setTimeout(() => {
     //   elSection3.style.display = 'block';

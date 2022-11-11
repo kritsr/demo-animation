@@ -11,7 +11,7 @@ let section1Height = document.getElementsByClassName('bg-section-1')[0].offsetHe
 
 window.onscroll = (e) => {
   let st = window.pageYOffset || document.documentElement.scrollTop;
-  if(st >= section1Height) {
+  if(st >= (section1Height - 20)) {
     el.style.display = 'block';
     el.style.animation = 'show-first 2s forwards';
 
@@ -48,7 +48,7 @@ window.onscroll = (e) => {
     // }, 1000)
   }
 
-  if(st >= section1Height*2) {
+  if(st >= ((section1Height*2) - 20)) {
     el3.style.display = 'block';
     el3.style.animation = 'show-second 3s forwards';
 
